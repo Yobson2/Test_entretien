@@ -1,0 +1,35 @@
+<head>
+    <link rel="stylesheet" href="/static/codeCss/vue.css">
+    
+</head>
+
+    <h3 class="user_test">Listes des utilisateurs</h3>
+<table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Téléphone</th>
+        <th>Taille Photo</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% if (data && data.length > 0) { %>
+            <% data.forEach(user => { %>
+              <tr>
+                <td><%= user.id_user %></td>
+                <td><%= user.Nom %></td>
+                <td><%= user.Prenom %></td>
+                <td><%= user.Telephone %></td>
+                <td><%= user.Photo %></td>
+              </tr>
+              
+            <% }) %>
+          <% } else { %>
+            <tr>
+              <td colspan="7">Aucune donnée disponible.</td>
+            </tr>
+          <% } %>
+    </tbody>
+  </table>

@@ -1,0 +1,41 @@
+<head>
+    <link rel="stylesheet" href="/static/codeCss/espace.css">
+    <link rel="stylesheet" href="/static/codeCss/update.css">
+</head>
+<button class=" deconnexion"><a href="/" onclick="confirm('voulez-vous quitter cette espace ?')">Deconnexion</a></button>
+
+<div class="card-container">
+
+    <% if (data && data.length > 0) { %>
+        <% data.forEach(user => { %> 
+	<span class="pro">User</span>
+	<img class="round" src="<%= user.Photo %>" alt="user" />
+	<h3><%= user.Nom %></h3>
+	<h6><%= user.Prenom %></h6>
+	<!-- <p>User interface designer and <br/> front-end developer</p> -->
+	<div class="buttons">
+		<button class="primary">
+            <a href="/users/edite/<%= user.id_user %>" onclick="confirm('Mise à jour des informations ?')">Edite</a>
+			
+		</button>
+		<button class="primary ghost">
+			<a href="/users/delete/<%= user.id_user %>" onclick="confirm('voulez vous supprimer votre compte ?')">Delete</a>
+		</button>
+	</div>
+	<div class="skills">
+		<h6>Numero de Telephone :</h6>
+		<ul>
+			<li><%= user.Telephone %></li>
+		</ul>
+	</div>
+
+    <% }) %>
+    <% } else { %>
+          <p>Aucune donnée disponible.</p>
+      <% } %>
+
+</div>
+ <div class="profit">
+
+    <p>ksnvdbvbhbyb</p>
+ </div>
